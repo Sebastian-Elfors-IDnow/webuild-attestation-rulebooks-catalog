@@ -190,7 +190,7 @@ This attestation type **MAY** be classified as:
 
 | **Data Identifier** | **Semantic Reference** | **Definition**                                          | **Data type**        |
 |:--------------------|:-----------------------|:--------------------------------------------------------|:---------------------|
-| `legal_entity`      | —                      | The certified legal entity.                             | Object               |
+| `legal_entity`      | [EconomicOperator](http://w3id.org/ebwv#EconomicOperator)  | The certified legal entity.   | Object               |
 | `scope`             | —                      | The certified scope, including sites and descriptions.  | Array of ScopeObject |
 | `evidence`          | —                      | Evidence of the original certificate.                   | Object               |
 
@@ -202,29 +202,29 @@ This attestation type **MAY** be classified as:
 |:-------------------------------|:-----------------------|:------------------------------------------------------|:--------------|
 | `type`                         | —                      | Type of the certificate (e.g., ISO 9001, IATF 16949). | String        |
 | `version`                      | —                      | Version of the certificate standard (e.g., "2015").   | String        |
-| `registration_number`          | —                      | Registration number from the certificate document.    | String        |
-| `registration_initial_date`    | —                      | Valid-from date of the certificate (ISO 8601).        | Date          |
-| `registration_expiration_date` | —                      | Valid-until date of the certificate (ISO 8601).       | Date          |
+| `registration_number`          | [identifier](https://w3id.org/ebwv#identifier)  | Registration number from the certificate document.    | String        |
+| `registration_initial_date`    | [cred:validFrom](https://www.w3.org/2018/credentials#validFrom) | Valid-from date of the certificate (ISO 8601).        | Date          |
+| `registration_expiration_date` | [cred:validUntil](https://www.w3.org/2018/credentials#validUntil)  | Valid-until date of the certificate (ISO 8601).       | Date          |
 
 **Legal_Entity Attributes**
 
 | **Data Identifier**              | **Semantic Reference** | **Definition**                                                                           | **Data type**  |
 |:---------------------------------|:-----------------------|:-----------------------------------------------------------------------------------------|:---------------|
-| `legal_person`                   | —                      | An object containing the legal name and form of the entity.                              | Object         |
-| `legal_person.legal_person_name` | —                      | The full legal name of the entity.                                                       | String         |
-| `legal_person.legal_form_type`   | —                      | The legal form type of the entity (e.g., GmbH, AG).                                      | String         |
-| `identifier`                     | —                      | An object of identifiers for the legal entity. **SHALL** contain at least one sub-field. | Object         |
-| `Address`                        | —                      | The registered primary address of the legal entity.                                      | Address Object |
+| `legal_person`                   | [EconomicOperator](http://w3id.org/ebwv#EconomicOperator) | An object containing the legal name and form of the entity.                              | Object         |
+| `legal_person.legal_person_name` | [legalName](https://w3id.org/ebwv#legalName) | The full legal name of the entity.                                                       | String         |
+| `legal_person.legal_form_type`   | [legalForm](https://w3id.org/ebwv#legalForm)  | The legal form type of the entity (e.g., GmbH, AG).                                      | String         |
+| `identifier`                     | [identifier](https://w3id.org/ebwv#identifier) OR <br> [legalIdentifier](https://w3id.org/ebwv#legalIdentifier)  | An object of identifiers for the legal entity. **SHALL** contain at least one sub-field. | Object         |
+| `Address`                        | [registeredAddress](https://w3id.org/ebwv#registeredAddress) | The registered primary address of the legal entity.                                      | Address Object |
 
 **ScopeObject Attributes**
 This object is defined for each entry in the `scope` array.
 
 | **Data Identifier**       | **Semantic Reference** | **Definition**                                                             | **Data type**  |
 |:--------------------------|:-----------------------|:---------------------------------------------------------------------------|:---------------|
-| `legal_entity_name`       | —                      | Legal name of the site/operating entity.                                   | String         |
-| `legal_entity_identifier` | —                      | Identifiers for the site/operating entity; **SHALL** contain at least one. | Object         |
-| `site_address`            | —                      | Physical address of the certified site.                                    | Address Object |
-| `scope_description`       | —                      | Textual description of the certificate scope for this site.                | String         |
+| `legal_entity_name`       | [legalName](https://w3id.org/ebwv#legalName) | Legal name of the site/operating entity.                                   | String         |
+| `legal_entity_identifier` | [identifier](https://w3id.org/ebwv#identifier) OR <br> [legalIdentifier](https://w3id.org/ebwv#legalIdentifier) | Identifiers for the site/operating entity; **SHALL** contain at least one. | Object         |
+| `site_address`            | [hasAddress](https://w3id.org/ebwv#hasAddress)  | Physical address of the certified site.                                    | Address Object |
+| `scope_description`       | [schema:description](https://schema.org/description)  | Textual description of the certificate scope for this site.                | String         |
 | `certified_site`          | —                      | Boolean: `true` = whole site certified; `false` = partial site only.       | Boolean        |
 
 **Evidence Attributes**
