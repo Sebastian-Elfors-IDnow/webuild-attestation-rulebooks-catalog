@@ -130,16 +130,16 @@ This attestation type MAY be classified as:
 
 | **Data Identifier** | **Semantic Reference** | **Definition**                                             | **Data type** |
 |:--------------------|:-----------------------|:-----------------------------------------------------------|:--------------|
-| `duns_number`       | —                      | Nine-digit unique identifier assigned by Dun & Bradstreet. | tstr          |
-| `legal_entity`      | —                      | An object encapsulating the legal identity of the entity.  | Object        |
+| `duns_number`       | [identifier](http://w3id.org/ebwv#identifier) | Nine-digit unique identifier assigned by Dun & Bradstreet. | tstr          |
+| `legal_entity`      | [Company](http://w3id.org/ebwv#Company) | An object encapsulating the legal identity of the entity.  | Object        |
 
 **Nested Mandatory Attributes**
 
 | **Data Identifier**       | **Semantic Reference** | **Definition**                                       | **Data type**  |
 |:--------------------------|:-----------------------|:-----------------------------------------------------|:---------------|
-| `legal_entity.legal_name` | —                      | The registered legal name of the entity.             | tstr           |
-| `legal_entity.legal_form` | —                      | The legal form of the entity (e.g., GmbH, AG, Ltd.). | tstr           |
-| `legal_entity.address`    | —                      | The official registered address of the entity.       | Address Object |
+| `legal_entity.legal_name` | [legalName](http://w3id.org/ebwv#legalName) | The registered legal name of the entity.             | tstr           |
+| `legal_entity.legal_form` | [legalForm](http://w3id.org/ebwv#legalForm)  | The legal form of the entity (e.g., GmbH, AG, Ltd.). | tstr           |
+| `legal_entity.address`    | [registeredAddress](http://w3id.org/ebwv#registeredAddress) | The official registered address of the entity.       | Address Object |
 
 
 ### 2.3 Optional Attributes
@@ -149,11 +149,11 @@ The following sub-fields within the `legal_entity.address` object are optional.
 
 | **Data Identifier** | **Semantic Reference** | **Definition**                                          | **Data type** |
 |:--------------------|:-----------------------|:--------------------------------------------------------|:--------------|
-| `street`            | —                      | Street name of the registered address.                  | tstr          |
-| `nr`                | —                      | Street or building number of the registered address.    | tstr          |
-| `postal_code`       | —                      | Postal or ZIP code of the registered address.           | tstr          |
-| `city`              | —                      | City or municipality of the registered address.         | tstr          |
-| `country`           | —                      | Country of the registered address (ISO 3166-1 alpha-2). | tstr          |
+| `street`            | [thoroughfare](http://w3id.org/ebwv#thoroughfare)  | Street name of the registered address.                  | tstr          |
+| `nr`                | [locatorDesignator](http://w3id.org/ebwv#locatorDesignator) | Street or building number of the registered address.    | tstr          |
+| `postal_code`       | [postCode](http://w3id.org/ebwv#postCode)  | Postal or ZIP code of the registered address.           | tstr          |
+| `city`              | [postName](http://w3id.org/ebwv#postName) | City or municipality of the registered address.         | tstr          |
+| `country`           | [adminUnitL1](http://w3id.org/ebwv#adminUnitL1) | Country of the registered address (ISO 3166-1 alpha-2). | tstr          |
 
 ### 2.4 Conditional Attributes
 No conditional attributes are defined for this attestation type.
