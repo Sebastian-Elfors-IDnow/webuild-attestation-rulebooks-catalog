@@ -131,7 +131,7 @@ This attestation type MAY be classified as:
 | **Data Identifier** | **Semantic Reference** | **Definition**                                             | **Data type** |
 |:--------------------|:-----------------------|:-----------------------------------------------------------|:--------------|
 | `duns_number`       | [identifier](http://w3id.org/ebwv#identifier) | Nine-digit unique identifier assigned by Dun & Bradstreet. | tstr          |
-| `legal_entity`      | [Company](http://w3id.org/ebwv#Company) | An object encapsulating the legal identity of the entity.  | Object        |
+| `legal_entity`      | [businessEntity](http://w3id.org/ebwv#businessEntity).[Company](http://w3id.org/ebwv#Company) | An object encapsulating the legal identity of the entity.  | Object        |
 
 **Nested Mandatory Attributes**
 
