@@ -160,19 +160,19 @@ No conditional attributes are defined for this attestation type.
 
 ### 2.5 Mandatory Metadata
 
-| **Data Identifier**          | **Definition**                                           | **Data type** |
-|:-----------------------------|:---------------------------------------------------------|:--------------|
-| `attestation_legal_category` | Indicates the legal category of the Attestation ("EAA"). | String        |
-| `cnf`                        | Cryptographic Key Binding to prove holder possession.    | Object        |
+| **Data Identifier**        | **Semantic Reference**   | **Definition**                                           | **Data type** |
+|:---------------------------|--|:---------------------------------------------------------|:--------------|
+| `attestation_legal_category`| [attestationLegalCategory](http://w3id.org/ebwv#attestationLegalCategory) | Indicates the legal category of the Attestation ("EAA"). | String        |
+| `cnf`                     | N/A | Cryptographic Key Binding to prove holder possession.    | Object        |
 
 *Note: Standard JWT claims (`iss`, `iat`, `exp`) are also mandatory.*
 
 ### 2.6 Optional Metadata
 
-| **Data Identifier** | **Definition**                                                              | **Data type** |
-|:--------------------|:----------------------------------------------------------------------------|:--------------|
-| `trust_anchor_url`  | URL where the trust anchor for verifying this attestation can be retrieved. | URI           |
-| `schema_version`    | Version of the schema used for this attestation.                            | String        |
+| **Data Identifier** | **Semantic Reference**  | **Definition**                                                              | **Data type** |
+|:-----------------|---|:----------------------------------------------------------------------------|:--------------|
+| `trust_anchor_url` | [cred:termsOfUse](https://www.w3.org/2018/credentials#termsOfUse) | URL where the trust anchor for verifying this attestation can be retrieved. | URI           |
+| `schema_version` | N/A | Version of the schema used for this attestation.                            | String        |
 
 ### 2.7 Conditional metadata
 No conditional metadata elements are defined for this attestation type.
