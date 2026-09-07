@@ -113,7 +113,7 @@ All `tstr` attributes SHALL have a maximum length of 150 characters. The authori
 
 | **Data Identifier** | **Semantic Reference** | **Definition** | **Data type** | **Example value** |
 |---|---|---|---|---|
-| `resident_state` | eIDAS/ARF residence attribute | Name or code of the state/province/region of the User's usual place of residence, where applicable (e.g. "Bavaria", "Île-de-France"). Where the User has no fixed residential address, this refers to the corresponding subdivision of the postal address. If the concept of state/region is not used in the national addressing scheme, this attribute SHALL be omitted; issuers SHALL NOT insert artificial placeholders (e.g. 'N/A') or duplicate other fields. | tstr | "N/A (omitted where not applicable)" |
+| `resident_state` | [residence](https://w3id.org/ebwv#residence).[adminUnitL2](https://w3id.org/ebwv#adminUnitL2) <br>eIDAS/ARF residence attribute | Name or code of the state/province/region of the User's usual place of residence, where applicable (e.g. "Bavaria", "Île-de-France"). Where the User has no fixed residential address, this refers to the corresponding subdivision of the postal address. If the concept of state/region is not used in the national addressing scheme, this attribute SHALL be omitted; issuers SHALL NOT insert artificial placeholders (e.g. 'N/A') or duplicate other fields. | tstr | "N/A (omitted where not applicable)" |
 | `arrival_date` | N/A | Day, month, and year on which the User arrived at the current usual place of residence, if known. | full-date | "2024-11-05" |
 
 > **Removed in v0.3 — `personal_administrative_number` and `tax_identification_number`:** These attributes were removed from the CoR attribute set. The CoR attestation is mandatorily cryptographically bound to a PID attestation on the same Wallet Unit (see § 4.4, `cryptographically_bound_to`, § 2.4), and § 4.2 now requires relying parties to always request and verify the PID together with the CoR. The PID is the authoritative, ARF-defined carrier of the User's national identification/administrative number and tax identifier where such attributes are relevant; duplicating them in the CoR would create redundant, potentially inconsistent copies of identity data that is already available, verified, and bound via the PID. Where a relying party's use case requires this information, it SHALL obtain it from the presented PID rather than from the CoR.
@@ -130,16 +130,16 @@ The following attribute is conditional: it SHALL be present when the CoR attesta
 
 | **Data Identifier** | **Semantic Reference** | **Definition** | **Data type** | **Example value** |
 |---|---|---|---|---|
-| `attestation_legal_category` | ARF / [European Digital Identity Regulation] Annex V point a, Annex VII point a | Indicates the legal category of the attestation. SHALL be set to `"QEAA"`, `"PuB-EAA"`, or `"non-qualified-EAA"` depending on the issuer's legal status. Not selectively disclosable. | tstr | "QEAA" |
-| `issuance_date` | ARF attestation metadata | Day, month, and year on which the CoR attestation was issued. | full-date | "2025-01-29" |
-| `issuing_authority` | ARF attestation metadata | Name of the authority or body that issued the CoR attestation. | tstr | "CTIE" |
+| `attestation_legal_category` | [attestationLegalCategory](https://w3id.org/ebwv#attestationLegalCategory) <br> ARF / [European Digital Identity Regulation] Annex V point a, Annex VII point a | Indicates the legal category of the attestation. SHALL be set to `"QEAA"`, `"PuB-EAA"`, or `"non-qualified-EAA"` depending on the issuer's legal status. Not selectively disclosable. | tstr | "QEAA" |
+| `issuance_date` | [cred:validFrom](https://www.w3.org/2018/credentials#validFrom) <br>ARF attestation metadata | Day, month, and year on which the CoR attestation was issued. | full-date | "2025-01-29" |
+| `issuing_authority` | [cred:issuer](https://www.w3.org/2018/credentials#issuer)ARF attestation metadata | Name of the authority or body that issued the CoR attestation. | tstr | "CTIE" |
 | `issuing_country` | ARF attestation metadata | Issuing country as an Alpha-2 country code as specified in ISO 3166-1. | tstr | "LU" |
 
 ### 2.6 Optional metadata
 
 | **Data Identifier** | **Semantic Reference** | **Definition** | **Data type** | **Example value** |
 |---|---|---|---|---|
-| `expiry_date` | ARF attestation metadata | Day, month, and year after which the CoR attestation is no longer valid. | full-date | "2026-04-03" |
+| `expiry_date` | [cred:validUntil](https://www.w3.org/2018/credentials#validUntil) <br>ARF attestation metadata | Day, month, and year after which the CoR attestation is no longer valid. | full-date | "2026-04-03" |
 
 ### 2.7 Conditional metadata
 
