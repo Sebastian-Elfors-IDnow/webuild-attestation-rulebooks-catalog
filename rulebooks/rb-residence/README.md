@@ -97,7 +97,7 @@ All `tstr` attributes SHALL have a maximum length of 150 characters. The authori
 
 | **Data Identifier** | **Semantic Reference** | **Definition** | **Data type** | **Example value** |
 |---|---|---|---|---|
-| `family_name` | ARF PID attribute: `family_name` | Current last name(s) or surname(s) of the User. | tstr | "Mill" |
+| `family_name` | [familyName](https://w3id.org/ebwv#familyName) <br> ARF PID attribute: `family_name` | Current last name(s) or surname(s) of the User. | tstr | "Mill" |
 | `given_name` | ARF PID attribute: `given_name` | Current first name(s), including middle name(s), of the User. | tstr | "Lyla-Rose" |
 | `birth_date` | ARF PID attribute: `birth_date` | Day, month, and year on which the User was born. If unknown, an approximate date of birth. | full-date | "1972-03-04" |
 | `birth_place` | ARF PID attribute: `place_of_birth` | Place of birth of the User, encoded as a structured object with sub-elements `locality` (town/city), `region` (state/province, where applicable), and `country` (ISO 3166-1 Alpha-2). Aligns with the ARF PID `place_of_birth` object rather than a flat string. | object (sub-elements: `locality`, `region`, `country`) | `{"locality": "London", "country": "GB"}` |
