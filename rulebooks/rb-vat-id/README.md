@@ -316,8 +316,8 @@ No mandatory attributes
 
 | **data identifier** | **Semantic Reference** | **Definition** | **Data type** | **Example value** |
 |--------|----------|--------------------------------------------------------------------------|------------|--------------|
-| issuer.authentic_source_country | issuingCountry | Country code, as specified in ISO 3166-1 alpha-2, of the country or territory of the provider of the VAT ID. | date | 05 |
-| issuer.vat_id_authenticsource | authenticSource | Name of the administrative authority that issued the VAT ID. This is the authentic source for the VAT-ID, which may differ from the issuer of the attestation| string |  |
+| issuer.authentic_source_country | issuingCountry | Country code, as specified in ISO 3166-1 alpha-2, of the country or territory of the provider of the VAT ID. | string | NL |
+| issuer.vat_id_authenticsource | authenticSource | Name of the administrative authority that issued the VAT ID. This is the authentic source for the VAT-ID, which may differ from the issuer of the attestation| string | Belastingdienst |
 | issuer.country | issuingCountry | Country code, as specified in ISO 3166-1 alpha-2, of the country or territory of the provider of the VAT ID. | string | NL |
 | issuer.issuing_authority | issuerAuthority | Name of the administrative authority or qualified trust service provider that issued the VAT ID attestation, in a specific language using  BCP 47 | string | en-GB |
 | issuer.attestation_issuing_date | iat | The date the attestation was issued | Integer (Unix timestamp) | |
